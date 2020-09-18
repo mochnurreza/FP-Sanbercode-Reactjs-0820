@@ -14,13 +14,13 @@ import VideogameIcon from "@material-ui/icons/VideogameAsset";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { NavContext } from "../Context/NavContext";
-import { AuthContext } from "../Context/AuthContext";
+import { Navcontext } from "../Context/Navcontext";
+import { Authcontext } from "../Context/Authcontext";
 
 const Navbar = (props) => {
     const classes = useStyles();
-    const { open, setOpen } = useContext(NavContext);
-    const { user, setUser } = useContext(AuthContext);
+    const { open, setOpen } = useContext(Navcontext);
+    const { user, setUser } = useContext(Authcontext);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openProfileIcon = Boolean(anchorEl);
 

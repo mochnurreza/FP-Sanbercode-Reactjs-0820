@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { toast } from "react-toastify";
 import Routes from "./Routes/Routes";
-import { NavProvider } from "./Context/NavContext";
-import { AuthProvider } from "./Context/AuthContext";
+import { NavProvider } from "./Context/Navcontext";
+import { AuthProvider } from "./Context/Authcontext";
 
 
 class App extends React.Component {

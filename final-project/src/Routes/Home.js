@@ -23,12 +23,12 @@ const Home = (props) => {
     >
       <Grid item className="animate__animated animate__fadeInUp animate__slow">
         <Typography variant="h2" align="center">
-          Welcome to Movies & Games
+          Odading Mang Oleh
         </Typography>
       </Grid>
       <Grid item className="animate__animated animate__fadeInUp animate__slow">
         <Typography variant="h5" color="textSecondary" align="center">
-          You can find more than 1000+ collections!
+          Rasanya Anjing Banget!
         </Typography>
       </Grid>
     </Grid>

@@ -7,7 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { AuthContext } from "../Context/AuthContext";
+import { Authcontext } from "../Context/Authcontext";
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = (props) => {
     const classes = useStyles();
-    const {setUser} = useContext (AuthContext);
-    const {input, setInput} = useState({ username: "", password: "" });
-    const [error, setError] = useState({ username: "", password: "" });
+    const {setUser} = useContext (Authcontext);
+    const [input, setInput] = useState({ email: "", password: "" });
+    const [error, setError] = useState({ email: "", password: "" });
 
     const handleChange = (event) => {
         const newError = { ...error };
@@ -33,9 +33,9 @@ const Login = (props) => {
         const value = event.target.value;
     
         switch (name) {
-          case "username":
+          case "email":
             if (!value) {
-              newError[name] = "Username required!";
+              newError[name] = "Email required!";
             } else {
               newError[name] = "";
             }
@@ -61,18 +61,18 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    const { username, password } = input;
+    const { email, password } = input;
 
-    if (!username && !password) {
+    if (!email && !password) {
       return setError({
-        username: "Username required!",
+        email: "Email required!",
         password: "Password required!",
       });
     }
 
-    if (!username) {
+    if (!email) {
       return setError({
-        username: "Username required!",
+        email: "Email required!",
       });
     }
 
@@ -82,12 +82,12 @@ const Login = (props) => {
       });
     }
 
-    if (username && password) {
+    if (email && password) {
       axios
         .post("https://backendexample.sanbersy.com/api/user-login", input)
         .then((res) => {
-          if (res.data === "invalid username or password") {
-            return toast.error("Invalid Username or Password!", {
+          if (res.data === "invalid Email or password") {
+            return toast.error("Invalid Email or Password!", {
               position: "top-right",
               autoClose: 3000,
               hideProgressBar: false,
@@ -114,7 +114,7 @@ const Login = (props) => {
           setError({ username: "", password: "" });
 
           localStorage.setItem("user", JSON.stringify(res.data));
-          props.history.push("/");
+          props.history.push("/movies");
         })
         .catch((err) => {
           console.log(err);
@@ -145,12 +145,12 @@ const Login = (props) => {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  name="username"
+                  name="email"
                   variant="outlined"
-                  label="Username"
-                  value={input.username}
-                  helperText={error.username}
-                  error={error.username ? true : false}
+                  label="Email"
+                  value={input.email}
+                  helperText={error.email}
+                  error={error.email ? true : false}
                   fullWidth
                   autoFocus
                   onChange={handleChange}

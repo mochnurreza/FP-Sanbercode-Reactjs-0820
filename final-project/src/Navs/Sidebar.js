@@ -10,11 +10,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MovieIcon from "@material-ui/icons/Movie";
 import VideogameIcon from '@material-ui/icons/VideogameAsset';
 import { useStyles } from "./UseStyles.js";
-import { NavContext } from "../Context/NavContext";
+import { Navcontext } from "../Context/Navcontext";
 
 const Sidebar = (props) => {
   const classes = useStyles();
-  const { open } = useContext(NavContext);
+  const { open } = useContext(Navcontext);
 
   const Movie = () => {
     props.history.push("/movies");

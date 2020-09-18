@@ -16,7 +16,7 @@ export default function Footer(props) {
             {" "}
             by{" "}
             <Link color="inherit" href="https://material-ui.com/">
-              Dananky
+              Azernr
             </Link>{" "}
           </Typography>
         </Container>

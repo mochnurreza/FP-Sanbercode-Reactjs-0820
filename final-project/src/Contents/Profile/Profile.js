@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import { AuthContext } from "../../Context/AuthContext";
+import { Authcontext } from "../../Context/Authcontext";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   
   const Profile = () => {
     const classes = useStyles();
-    const { user, setUser } = useContext(AuthContext);
+    const { user, setUser } = useContext(Authcontext);
     const [editMode, setEditMode] = useState(false);
     const [input, setInput] = useState({ password: "", oldPassword: "" });
     const [error, setError] = useState({ password: "", oldPassword: "" });

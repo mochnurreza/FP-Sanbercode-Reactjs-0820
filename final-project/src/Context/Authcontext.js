@@ -8,8 +8,8 @@ export const AuthProvider = (props) => {
     const [user, setUser] = useState(currentUser);
 
     return (
-        <AuthContext.Provider value={{ user, setUser }}>
+        <Authcontext.Provider value={{ user, setUser }}>
           {props.children}
-        </AuthContext.Provider>
+        </Authcontext.Provider>
       );    
 };
